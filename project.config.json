@@ -1,0 +1,14 @@
+{
+  "miniprogramRoot": "./dist",
+  "projectname": "taro-demo",
+  "description": "",
+  "appid": "wx8743feafa8fe2ae5",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false,
+    "useCompilerModule": true
+  },
+  "compileType": "miniprogram"
+}
