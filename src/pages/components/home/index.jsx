@@ -56,31 +56,6 @@ function Home() {
       backgroundColor: "#ffffff",
     });
   });
-  async function handlePay() {
-    axios
-      .get("http://192.168.8.166:8888/tt/wx-pay", {
-        headers: {
-          Authorization:
-            "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiODIyYjE0M2E2N2U0ODFlYTU2MDU0MDFhOTY2ZDgwYyIsImlzcyI6InJtYW56enoiLCJqd3QtdXNlci1vcGVuSWQta2V5Ijoib1dQcGQ1ZUppek5ZRlBWdlhSS0xDMkUzMmQzNCIsImV4cCI6MTU5OTA5Njc3MiwiaWF0IjoxNTk2NTA0NzcyfQ.ynYs1MRjGzY08thPLYbyO_aY-lsqtOJ4EOcDknpwJ14",
-        },
-      })
-      .then((res) => {
-        let payInfo = res.data.data;
-        Taro.requestPayment({
-          timeStamp: payInfo.timeStamp,
-          nonceStr: payInfo.nonceStr,
-          package: payInfo.packageValue,
-          signType: payInfo.signType,
-          paySign: payInfo.paySign,
-          success: function (res) {
-            console.log("success:", res);
-          },
-          fail: function (res) {
-            console.log("error:", res);
-          },
-        });
-      });
-  }
   const tab = (item) => {
     if (item.top) {
       return <View className="tag top-tag">置顶</View>;

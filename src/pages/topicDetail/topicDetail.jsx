@@ -30,7 +30,7 @@ function User() {
 
   useReady(() => {
     // getCurrentInstance().router.params.id;
-    let ID = "5ee1ee83b703280f0bcb922a";
+    let ID = getCurrentInstance().router.params.id;
     dispatch({
       type: "topic/getTopicDetail",
       payload: { id: ID },
